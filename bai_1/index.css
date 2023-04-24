@@ -1,0 +1,112 @@
+.form{
+    background-color: rgb(55, 55, 129);
+    height: 2000px;
+    margin: auto;
+
+}
+h1{
+    color: purple;
+    background-color: black;
+    text-align: center;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.table{
+    background-color: white;
+    width: 60%;
+    margin: auto;
+    border-radius: 6px;
+    padding: 30px 30px;
+}
+
+.table > h2{
+    text-align:center;
+}
+
+.row{
+    border: none;
+    border-radius: 50%;
+    background-color: rgb(226, 225, 225);
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    font-weight: bolder;
+    cursor: pointer;
+}
+.form-row{
+    display: flex;
+    justify-content:space-evenly;
+
+}
+
+#comment{
+    width: 700px;
+    height: 30px;
+    position: absolute;
+}
+#btnSearch{
+    width: 70px;
+    height: 25px;
+    position: relative;
+    left: 620px;
+    top: 5px;
+    border: none;
+    background-color: rgb(206, 200, 200);
+    border-radius: 6px;
+}
+
+.content-search{
+    padding-top: 30px;
+    margin: auto;
+    width: 80%;
+ 
+}
+
+.comment{
+    width: 65%;
+    display: flex;
+    margin: auto;
+    justify-content: space-between;
+    color: white;
+    margin-top: 20px
+}
+
+.content{
+    width: 60%;
+    height: 50px;
+    margin: auto;
+    margin-top: 80px;
+}
+
+.content-text{
+    width: 850px;
+    height: 70px;
+    display: flex;
+    margin: auto;
+    margin-top: 20px;
+    border-radius: 6px;
+    border: none;
+    background-color: white;
+    position: absolute;
+    padding: 10px 10px;
+    align-items: center;
+}
+.review{
+    position: relative;
+    background-color:rgb(237, 70, 237);
+    color: white;
+    border: 1px solid white;
+    top: 10px;
+  
+
+}
+
+
+i{
+    color: red;
+    position: relative;
+    top: 20px;
+    left: 790px;
+}

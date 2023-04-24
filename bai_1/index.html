@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+</head>
+
+<body>
+    <div class="form">
+        <h1>Feedback TA</h1>
+        <div class="table">
+            <h2>Thầy phú dạy anh em có hay không ?????</h2>
+            <div class="form-row">
+                <input class="row" type="text" value="1" id="1" onclick="handleClick(this)">
+                <input class="row" type="text" value="2" id="2" onclick="handleClick(this)">
+                <input class="row" type="text" value="3" id="3" onclick="handleClick(this)">
+                <input class="row" type="text" value="4" id="4" onclick="handleClick(this)"> 
+                <input class="row" type="text" value="5" id="5" onclick="handleClick(this)">
+                <input class="row" type="text" value="6" id="6" onclick="handleClick(this)">
+                <input class="row" type="text" value="7" id="7" onclick="handleClick(this)">
+                <input class="row" type="text" value="8" id="8" onclick="handleClick(this)">
+                <input class="row" type="text" value="9" id="9" onclick="handleClick(this)">
+                <input class="row" type="text" value="10" id="10" onclick="handleClick(this)">
+            </div>
+            <div class="content-search">
+                <input type="text" name="" id="comment" placeholder="Write a review"><input type="button" name=""
+                    id="btnSearch" value="Send" onclick="handleSend()">
+            </div>
+        </div>
+        <div class="comment">
+            <label for="">2 review</label> <label for="">Average Rating:9</label>
+        </div>
+        <div class="list-content">
+            <div class="content">
+                <p class="content-text">This iss</p><input type="button" value="8" class="row review">
+                <i class='bx bxs-edit'></i>
+                <i class='bx bx-x' onclick="handleDelete()"></i>
+            </div>
+        </div>
+    </div>
+    <script src="db.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>
