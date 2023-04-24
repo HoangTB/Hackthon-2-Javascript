@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let array = [5, 3, 1, 2, 4];
+        let newArr = [];
+        while (array.length > 0) {
+            let min = 0;
+            for (let i = 1; i < array.length; i++) {
+                if (array[i] < array[min]) {
+                    min = i;
+                }
+            }
+            newArr.push(array[min]);
+            array.splice(min, 1);
+        }
+        console.log(newArr);
+        alert(newArr);
+    </script>
+</body>
+
+</html>

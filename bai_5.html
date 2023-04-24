@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .content {
+        display: flex;
+        justify-content: space-around;
+
+    }
+
+    table,
+    th,
+    td {
+        border-collapse: collapse;
+        border: 1px solid black;
+    }
+
+    th {
+        background-color: rgb(214, 211, 211);
+    }
+
+    .form {
+        border: 1px solid black;
+        width: 200px;
+        height: 200px;
+        padding: 10px;
+        display: grid;
+        gap: 10px;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    .form>input {
+        height: 30px;
+        border-radius: 6px;
+    }
+
+    .form>caption {
+        text-align: center;
+    }
+</style>
+
+<body>
+    <h1>DANH SÁCH NHÂN VIÊN RIKKEI ACADEMY</h1>
+    <div class="content">
+        <div>
+            <table cellpadding="20">
+                <thead>
+                    <th>No</th>
+                    <th>Họ và Tên</th>
+                    <th>Tùy chọn</th>
+                </thead>
+                <tbody class="tbody">
+                    <tr>
+                        <td>1</td>
+                        <td>Truong Bao Hoang</td>
+                        <td><input type="button" name="" id="" value="Edit"> <input type="button" name="" id=""
+                                value="Delette"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="form">
+            <caption>Form Create and Edit</caption>
+            <input type="number" name="" id="id" placeholder="Nhập ID...">
+            <input type="text" name="" id="name" placeholder="Nhập Họ và tên...">
+            <input type="button" value="ADD" id="add" onclick="handleAdd()"> <input type="button" id="update"
+                value="UPDATE" onclick="handleUpdate()" hidden>
+        </div>
+    </div>
+    <script>
+        const users = [
+            {
+                id: 1,
+                name: 'Truong Bao Hoang',
+
+            },
+            {
+                id: 2,
+                name: 'Tran Van Xuyen',
+
+            },
+            {
+                id: 3,
+                name: 'Nguyen Hoang Hieu',
+
+            },
+
+        ]
+        // Render
+        renderUser();
+        function renderUser() {
+            const tbody = document.querySelector(".tbody");
+
+            let contentTbody = "";
+
+            users.forEach((data, index) => {
+                contentTbody += ` <tbody class="tbody">
+                    <tr>
+                        <td>${index + 1}</td>
+                        <td>${data.name}</td>
+                        <td><input type="button" name="" id="" value="Edit" onclick="handleEdit(${data.id})"> <input type="button" name="" id=""
+                                value="Delete" onclick="handleDelete(${data.id})"></td>
+                    </tr>
+                </tbody>`;
+            });
+            tbody.innerHTML = contentTbody;
+        }
+
+        // Create
+        function handleAdd() {
+            const idAdd = document.querySelector("#id").value;
+            const nameAdd = document.querySelector("#name").value;
+            const user = {
+                id: idAdd,
+                name: nameAdd,
+            };
+            let isDulicate = false;
+            users.forEach((data) => {
+                if (data.id == idAdd) {
+                    isDulicate = true;
+                }
+
+            });
+            if (isDulicate) {
+                alert("ID trùng, vui lòng đặt id mới");
+                return;
+            }
+            users.push(user);
+            renderUser();
+        }
+
+        // Edit
+
+        function handleEdit(id) {
+            let userEdit = {};
+            users.forEach((data) => {
+                if (data.id == id) {
+                    userEdit = data;
+                }
+            });
+            const idEdit = document.querySelector("#id");
+            const namaEdit = document.querySelector("#name");
+            idEdit.value = userEdit.id;
+            namaEdit.value = userEdit.name;
+            const btnAdd = document.querySelector("#add");
+            const btnUp = document.querySelector("#update");
+            if (btnUp.style.display === "none") {
+                btnUp.style.display = "block";
+                btnAdd.style.display = "none";
+            } else {
+                btnUp.style.display = "block";
+                btnAdd.style.display = "block";
+            }
+
+
+
+        }
+
+        // Update
+        function handleUpdate() {
+            const idUpdate = document.querySelector("#id").value;
+            const nameUpdate = document.querySelector("#name").value;
+            const userUpdate = {
+                id: idUpdate,
+                name: nameUpdate,
+            };
+            users.forEach((data, index) => {
+                if (data.id == userUpdate.id) {
+                    users.splice(index, 1, userUpdate);
+                }
+            });
+            renderUser();
+        }
+
+        // Delete
+        function handleDelete(id) {
+            users.forEach((data, index) => {
+                if (data.id == id) {
+                    users.splice(index, 1);
+                }
+            });
+            renderUser();
+        }
+
+    </script>
+</body>
+
+</html>
